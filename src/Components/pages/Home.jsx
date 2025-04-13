@@ -8,7 +8,7 @@ const Banner = React.lazy(() => import("../Banner/Banner"));
 
 function Home() {
   return (
-    <div className="home flex md:gap-20 gap-5 flex-col pb-20">
+    <div className="home flex md:gap-20 gap-10 flex-col pb-20">
       <Suspense fallback={<LoadingSpinner />}>
         <Banner />
       </Suspense>

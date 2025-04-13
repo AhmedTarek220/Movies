@@ -54,7 +54,7 @@ const CardsApi = React.memo(({ title, category }) => {
   }
 
   return (
-    <div className="title_cards mx-5 my-15 relative">
+    <div className="title_cards mx-2 md:mx-5 md:my-15 relative">
       <h2 className="text-3xl mb-5 font-bold">
         {title || "Popular On Netflix"}
       </h2>
