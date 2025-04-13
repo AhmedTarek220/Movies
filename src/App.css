@@ -38,6 +38,7 @@ footer {
   padding: 4rem 1rem;
 }
 
+
 .main h1 {
   font-size: 3rem;
   font-weight: 600;
@@ -51,6 +52,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .main.ex {
+    padding: 2rem 1rem;
+  }
   .main h1 {
     font-size: 2rem;
     text-align: center;

@@ -4,7 +4,7 @@ import { useAxios } from "../hooks/MainAxios";
 import Divider from "../../Components/Divider/Divider";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import VideoPlay from "../Cards/Video";
+
 import { API_KEY, BASE_URL, IMAGE_URL } from "../Constants";
 import LoadingSpinner from "../LoadingSpinner";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -12,14 +12,9 @@ import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 
 const DetailsPage = React.memo(() => {
-  const [playVideo, setPlayVideo] = useState(false);
-  const [playVideoId, setPlayVideoId] = useState("");
+
   const { media_type, id } = useParams();
   const swiperRef = useRef(null);
-  const handlePlayVideo = (videoId) => {
-    setPlayVideoId(videoId);
-    setPlayVideo(true);
-  };
 
   const { data, loading, error } = useAxios(
     `${BASE_URL}/${media_type}/${id}?api_key=${API_KEY}&append_to_response=credits,similar`
@@ -58,8 +53,7 @@ const DetailsPage = React.memo(() => {
     swiperRef.current?.slideNext();
   }, []);
   const breakpoints = useMemo(() => ({
-    480: { slidesPerView: 2 },
-    768: { slidesPerView: 3 },
+    0: { slidesPerView: 2 },
     1024: { slidesPerView: 4 },
     1280: { slidesPerView: 5 },
   }), []);
@@ -161,8 +155,8 @@ const DetailsPage = React.memo(() => {
         </div>
       </div>
       {/*   Similar Movie Section   */}
-      <div className="main relative">
-        <h1 className="text-4xl font-bold">Similar Movies To Show</h1>
+      <div className="main ex relative">
+        <h2 className=" text-2xl md:text-4xl md:mb-10 mb-5 font-bold">Similar Movies To Show</h2>
         <div>
           <Swiper
        spaceBetween={15}
@@ -226,15 +220,6 @@ const DetailsPage = React.memo(() => {
             </button>
           </div>
         </div>
-      </div>
-      <div className="Video">
-        {playVideo && (
-          <VideoPlay
-            data={playVideoId}
-            close={() => setPlayVideo(false)}
-            media_type={media_type}
-          />
-        )}
       </div>
     </div>
   );
