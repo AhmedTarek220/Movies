@@ -131,7 +131,7 @@ img:hover {
 .buttons {
   position: absolute;
   top: 50%;
-  z-index: 30;
+  z-index: 5;
   left: 0;
   right: 0;
   display: flex;

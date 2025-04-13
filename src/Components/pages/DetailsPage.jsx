@@ -79,7 +79,7 @@ const DetailsPage = React.memo(() => {
         <div className="absolute w-full h-full top-0 bg-gradient-to-t from-neutral-900/90 to-transparent"></div>
       </div>
       {/*   Container Section  Image && Text   */}
-      <div className="px-3 py-16 flex lg:gap-15 gap-5 flex-col justify-center md:flex-row ">
+      <div className="px-3 py-3 lg:py-16 flex lg:gap-15 gap-5 flex-col justify-center md:flex-row ">
         <div className="image lg:-mt-28 lg:mx-5 z-1 text-center flex flex-col">
           <img
             src={`${IMAGE_URL}/original${data.poster_path}`}
